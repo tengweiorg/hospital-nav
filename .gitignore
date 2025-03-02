@@ -1,0 +1,167 @@
+# Django项目.gitignore优化版本
+
+### Python ###
+# 字节编译/优化/DLL文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 分发/打包
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+### Django ###
+# 日志文件
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 本地配置
+local_settings.py
+
+# 数据库
+db.sqlite3
+db.sqlite3-journal
+*.sqlite3
+*.db
+
+# 媒体文件和静态文件(开发模式)
+media/
+staticfiles/
+static_root/
+
+# 但保留media/downloads目录结构
+!media/downloads/
+media/downloads/*
+!media/downloads/.gitkeep
+
+### 虚拟环境 ###
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pythonenv*
+
+### 环境变量 ###
+.env
+.env.*
+!.env.example
+
+### IDE和编辑器 ###
+# PyCharm
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+### 测试与覆盖率 ###
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+### 前端 ###
+# Node
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Webpack
+.webpack/
+.webpack-stats.json
+
+### 临时文件 ###
+*.bak
+*.tmp
+*.temp
+.temp/
+tmp/
+
+### 部署相关 ###
+# Ansible
+*.retry
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# 密钥文件
+*.pem
+*.key
+*.cert
+*.pub
+
+# 本地开发服务器数据
+.runserver
+
+# 缓存文件
+__pycache__
+.sass-cache/
+.eslintcache
+.stylelintcache
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py 

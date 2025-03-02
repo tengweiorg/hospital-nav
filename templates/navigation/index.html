@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>医院内网导航</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 图标 -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <!-- 自定义样式 -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-hospital"></i>
+                </div>
+                <h1>医院内网</h1>
+            </div>
+            
+            <div class="sidebar-info">
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <span id="current-time">加载中...</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-user"></i>
+                    IP: <span id="visitor-ip" class="ip-badge">获取中...</span>
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <p>&copy; <span id="current-year">2025</span></p>
+                <p>信息科技术支持</p>
+            </div>
+
+            <!-- 在侧边栏添加快捷方式区域 -->
+            <div class="sidebar-shortcuts">
+                <h3 class="sidebar-section-title">热门应用</h3>
+                <div id="favorite-apps" class="shortcuts-list">
+                    <!-- 由服务器加载最高点击量的应用 -->
+                </div>
+                
+                <h3 class="sidebar-section-title">我的历史</h3>
+                <div id="recent-apps" class="shortcuts-list">
+                    <!-- 由localStorage加载 -->
+                </div>
+            </div>
+        </aside>
+
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="search-container">
+                    <form id="search-form">
+                        <div class="search-wrapper">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" id="search-input" placeholder="搜索应用、系统、资源..." aria-label="搜索">
+                            <button type="button" id="clear-search" class="clear-button" style="display: none;">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </header>
+
+            <!-- 搜索结果区域 -->
+            <div id="search-results" class="search-results-container"></div>
+
+            <!-- 导航内容区 -->
+            <div id="navigation-content" class="nav-content">
+                <!-- 内容将通过JavaScript动态加载 -->
+            </div>
+        </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="back-to-top" title="返回顶部" aria-label="返回顶部">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+    <!-- 自定义JS -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
